@@ -1,17 +1,11 @@
 {
-  "name": "wavechem",
+  "name": "wave-chem",
   "version": "1.0.0",
-  "main": "server.js",
-  "type": "commonjs",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.21.2",
-    "multer": "^2.0.2"
-  },
+  "private": true,
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "gh-pages": "^5.0.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d ."
   }
 }
