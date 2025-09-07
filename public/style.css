@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Chemistry background */
+  background: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3D%2522chemical%2Bbackground%2522&psig=AOvVaw3bKjxiI4qUB2G2MRq18GW9&ust=1757324027583000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIj9sqSsxo8DFQAAAAAdAAAAABAE') no-repeat center center fixed;
+  background-size: cover;
+
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: rgba(0,0,0,0.7); /* dark overlay */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px #000;
+}
+
+button, .download-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover, .download-btn:hover {
+  transform: scale(1.05);
+}
+
+button {
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  color: #000;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #00ccff, #0066ff);
+  color: #fff;
+  text-decoration: none;
+}
+
+.material-card {
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+/* Full page body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Grey background */
+  background: #808080; /* medium grey */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Container with blur */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: rgba(255,255,255,0.1); /* semi-transparent overlay */
+  backdrop-filter: blur(10px); /* blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px #000;
+}
+
+/* Buttons */
+button, .download-btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover, .download-btn:hover {
+  transform: scale(1.05);
+}
+
+button {
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  color: #000;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #00ccff, #0066ff);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Material cards */
+.material-card {
+  background: rgba(255,255,255,0.15); /* more transparent */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}

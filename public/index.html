@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WaveChem - Study Materials</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🌟 WaveChem - Chemistry Study Materials</h2>
+
+    <div id="classButtons" style="text-align:center; margin-bottom:20px;">
+      <button onclick="filterClass('class11')">Class 11</button>
+      <button onclick="filterClass('class12')">Class 12</button>
+      <button onclick="filterClass('jee')">JEE</button>
+      <button onclick="filterClass('neet')">NEET</button>
+    </div>
+
+    <div id="materialsList"></div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="admin.html"><button>Admin Login</button></a>
+    </div>
+  </div>
+
+  <script>
+    let materials = [];
+
+    async function loadMaterials() {
+      const res = await fetch('/api/materials');
+      materials = await res.json();
+      displayMaterials(materials);
+    }
+
+    function displayMaterials(list) {
+      const div = document.getElementById('materialsList');
+      div.innerHTML = "";
+      if(list.length === 0){
+        div.innerHTML = "<p>No materials available.</p>";
+        return;
+      }
+      list.forEach(m => {
+        const card = document.createElement('div');
+        card.className = "material-card";
+        card.innerHTML = `
+          <h3>${m.title}</h3>
+          <p><strong>Class:</strong> ${m.classType}</p>
+          <p>${m.description || ""}</p>
+          <a class="download-btn" href="/uploads/${m.filename}" download>⬇️ Download</a>
+        `;
+        div.appendChild(card);
+      });
+    }
+
+    function filterClass(cls) {
+      const filtered = materials.filter(m => m.classType === cls);
+      displayMaterials(filtered);
+    }
+
+    loadMaterials();
+  </script>
+</body>
+</html>

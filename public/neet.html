@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEET Materials</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📘 NEET Chemistry Materials</h1>
+  <div class="materials" id="materialsList"></div>
+
+  <script>
+    async function loadMaterials() {
+      const res = await fetch('/api/materials');
+      const materials = await res.json();
+      const container = document.getElementById('materialsList');
+      container.innerHTML = "";
+
+      materials.filter(m => m.classType === "NEET").forEach(m => {
+        const card = document.createElement('div');
+        card.className = "material-card";
+        card.innerHTML = `
+          <h3>${m.title}</h3>
+          <p>${m.description || ""}</p>
+          <a class="download-btn" href="/uploads/${m.filename}" download>⬇️ Download</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+    loadMaterials();
+  </script>
+</body>
+</html>
